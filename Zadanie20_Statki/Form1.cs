@@ -30,6 +30,7 @@ namespace Zadanie20_Statki
                 c.Tag = c.Text;
                 c.Name = "btn_" + c.Text;
                 c.Click += Btn_Click;
+                c.Text = "?";
            }
             
             
@@ -71,9 +72,10 @@ namespace Zadanie20_Statki
            int tagNumber =  random.Next(1, controls.Count);
             foreach (Control c in controls)
             {
-                if (Convert.ToInt32(c.Text) == tagNumber)
+                if (Convert.ToInt32(c.Tag) == tagNumber)
                 {
                     c.Tag = "Ship";
+                    controls.Remove(c);
                     break;
                 }
             }
@@ -107,7 +109,15 @@ namespace Zadanie20_Statki
         private void Btn_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+
+            if (btn.Tag.ToString() == "Ship")
+            {
+                btn.BackColor = Color.DarkOrange;
+            }
+            
             MessageBox.Show(btn.Tag.ToString());
+
+            btn.Enabled = false;
         }
 
 
