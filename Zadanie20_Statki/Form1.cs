@@ -40,7 +40,7 @@ namespace Zadanie20_Statki
 
             List<byte> locationsList = new List<byte>();
 
-           
+
 
             //foreach (Control c in tableLayoutPanel.Controls)
             //{
@@ -82,10 +82,10 @@ namespace Zadanie20_Statki
             //}
         }
 
-        
+
         private void BuildingShips4Masted()
         {
-            
+
 
             byte xAxis = (byte)random.Next(0, 10);  // losowanie startowej pozycji 4masztowca
             byte yAxis = (byte)random.Next(0, 10);
@@ -104,9 +104,9 @@ namespace Zadanie20_Statki
                 {
                     case 1:
                         {
-                            if (yAxis >= 3 
-                                && locations[xAxis, yAxis - 1] ==0 
-                                && locations[xAxis, yAxis - 2] == 0 
+                            if (yAxis >= 3
+                                && locations[xAxis, yAxis - 1] == 0
+                                && locations[xAxis, yAxis - 2] == 0
                                 && locations[xAxis, yAxis - 3] == 0)
                             {
                                 locations[xAxis, yAxis - 1] = 4;
@@ -114,31 +114,52 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis - 3] = 4;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis - 2] = 8;
-                                    locations[xAxis + 1, yAxis - 2] = 8;
-                                    locations[xAxis - 1, yAxis - 3] = 8;
-                                    locations[xAxis + 1, yAxis - 3] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 3));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 3));
 
-                                    locations[xAxis , yAxis+1] = 8;  // zarezerwowane pola na dole
-                                    locations[xAxis-1, yAxis + 1] = 8;
-                                    locations[xAxis+1, yAxis + 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
 
-                                    locations[xAxis - 1, yAxis - 4] = 8; // zarezerwowane pola na górze
-                                    locations[xAxis + 1, yAxis - 4] = 8;
-                                    locations[xAxis , yAxis - 4] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 4));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 4));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 4));
 
 
-                                }
-                                catch (Exception exc)
-                                {
 
-                                }
+
+
+                                //try
+                                //{
+                                //    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 2] = 8;
+                                //    locations[xAxis + 1, yAxis - 2] = 8;
+                                //    locations[xAxis - 1, yAxis - 3] = 8;
+                                //    locations[xAxis + 1, yAxis - 3] = 8;
+
+                                //    locations[xAxis, yAxis + 1] = 8;  // zarezerwowane pola na dole
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis - 1, yAxis - 4] = 8; // zarezerwowane pola na górze
+                                //    locations[xAxis + 1, yAxis - 4] = 8;
+                                //    locations[xAxis, yAxis - 4] = 8;
+
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
                             }
                             else
                             {
@@ -158,31 +179,48 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis + 3] = 4;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis - 1, yAxis] = 8;
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
-                                    locations[xAxis - 1, yAxis + 2] = 8;
-                                    locations[xAxis + 1, yAxis + 2] = 8;
-                                    locations[xAxis + 1, yAxis + 3] = 8;
-                                    locations[xAxis - 1, yAxis + 3] = 8;
 
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 3));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 3));
 
-                                    locations[xAxis + 1, yAxis + 4] = 8;
-                                    locations[xAxis, yAxis + 4] = 8;
-                                    locations[xAxis - 1, yAxis + 4] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 4));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 4));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 4));
+                                //try
+                                //{
+                                //    locations[xAxis - 1, yAxis] = 8;
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 2] = 8;
+                                //    locations[xAxis + 1, yAxis + 2] = 8;
+                                //    locations[xAxis + 1, yAxis + 3] = 8;
+                                //    locations[xAxis - 1, yAxis + 3] = 8;
+
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+
+                                //    locations[xAxis + 1, yAxis + 4] = 8;
+                                //    locations[xAxis, yAxis + 4] = 8;
+                                //    locations[xAxis - 1, yAxis + 4] = 8;
 
 
-                                }
-                                catch (Exception exc)
-                                {
+                                //}
+                                //catch (Exception exc)
+                                //{
 
-                                }
+                                //}
 
                             }
                             else
@@ -194,40 +232,57 @@ namespace Zadanie20_Statki
                     case 3:
                         {
                             if (xAxis >= 3
-                                && locations[xAxis -1, yAxis ] == 0
-                                && locations[xAxis -2, yAxis] == 0
-                                && locations[xAxis -3, yAxis ] == 0)
+                                && locations[xAxis - 1, yAxis] == 0
+                                && locations[xAxis - 2, yAxis] == 0
+                                && locations[xAxis - 3, yAxis] == 0)
                             {
                                 locations[xAxis - 1, yAxis] = 4;
                                 locations[xAxis - 2, yAxis] = 4;
                                 locations[xAxis - 3, yAxis] = 4;
                                 shipCorrectLocation = true;
 
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis +1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 2), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 2), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 3), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 3), Convert.ToByte(yAxis - 1));
 
-                                try
-                                {
-                                    locations[xAxis, yAxis +1] = 8;
-                                    locations[xAxis, yAxis -1] = 8;
-                                    locations[xAxis - 1, yAxis+1] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis -2, yAxis + 1] = 8;
-                                    locations[xAxis -2, yAxis -1] = 8;
-                                    locations[xAxis -3, yAxis + 1] = 8;
-                                    locations[xAxis -3, yAxis -1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis +1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
 
-                                    locations[xAxis +1, yAxis] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 4), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 4), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 4));
 
-                                    locations[xAxis - 4, yAxis] = 8;
-                                    locations[xAxis - 4, yAxis - 1] = 8;
-                                    locations[xAxis - 4, yAxis + 1] = 8;
 
-                                }
-                                catch (Exception exc)
-                                {
+                                //try
+                                //{
+                                //    locations[xAxis, yAxis + 1] = 8;
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis - 2, yAxis + 1] = 8;
+                                //    locations[xAxis - 2, yAxis - 1] = 8;
+                                //    locations[xAxis - 3, yAxis + 1] = 8;
+                                //    locations[xAxis - 3, yAxis - 1] = 8;
 
-                                }
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis - 4, yAxis] = 8;
+                                //    locations[xAxis - 4, yAxis - 1] = 8;
+                                //    locations[xAxis - 4, yAxis + 1] = 8;
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
                             }
                             else
                             {
@@ -247,30 +302,47 @@ namespace Zadanie20_Statki
                                 locations[xAxis + 3, yAxis] = 4;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis, yAxis + 1] = 8;
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                    locations[xAxis + 2, yAxis + 1] = 8;
-                                    locations[xAxis + 2, yAxis - 1] = 8;
-                                    locations[xAxis + 3, yAxis + 1] = 8;
-                                    locations[xAxis + 3, yAxis - 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 2), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 2), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 3), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 3), Convert.ToByte(yAxis - 1));
 
-                                    locations[xAxis - 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
 
-                                    locations[xAxis + 4, yAxis] = 8;
-                                    locations[xAxis + 4, yAxis - 1] = 8;
-                                    locations[xAxis + 4, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 4), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 4), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 4));
 
-                                }
-                                catch (Exception exc)
-                                {
+                                //try
+                                //{
+                                //    locations[xAxis, yAxis + 1] = 8;
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 2, yAxis + 1] = 8;
+                                //    locations[xAxis + 2, yAxis - 1] = 8;
+                                //    locations[xAxis + 3, yAxis + 1] = 8;
+                                //    locations[xAxis + 3, yAxis - 1] = 8;
 
-                                }
+                                //    locations[xAxis - 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis + 4, yAxis] = 8;
+                                //    locations[xAxis + 4, yAxis - 1] = 8;
+                                //    locations[xAxis + 4, yAxis + 1] = 8;
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
 
                             }
                             else
@@ -293,11 +365,11 @@ namespace Zadanie20_Statki
         {
             bool locationNotAvailable = false; // sprawdzam czy nie wpadłem na już istniejący okręt albo jego okolice
             byte xAxis;
-            byte yAxis; 
+            byte yAxis;
             do
             {
-                 xAxis = (byte)random.Next(0, 10);  // losowanie startowej pozycji 3masztowca
-                 yAxis = (byte)random.Next(0, 10);
+                xAxis = (byte)random.Next(0, 10);  // losowanie startowej pozycji 3masztowca
+                yAxis = (byte)random.Next(0, 10);
 
                 if (locations[xAxis, yAxis] != 0)
                 {
@@ -332,29 +404,46 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis - 2] = 3;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis - 2] = 8;
-                                    locations[xAxis + 1, yAxis - 2] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 2));
+                                
 
-                                    locations[xAxis, yAxis + 1] = 8;  // zarezerwowane pola na dole
-                                    locations[xAxis - 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
 
-                                    locations[xAxis - 1, yAxis - 3] = 8; // zarezerwowane pola na górze
-                                    locations[xAxis + 1, yAxis - 3] = 8;
-                                    locations[xAxis, yAxis - 3] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 3));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 3));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 3));
 
 
-                                }
-                                catch (Exception exc)
-                                {
+                                //try
+                                //{
+                                //    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 2] = 8;
+                                //    locations[xAxis + 1, yAxis - 2] = 8;
 
-                                }
+                                //    locations[xAxis, yAxis + 1] = 8;  // zarezerwowane pola na dole
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis - 1, yAxis - 3] = 8; // zarezerwowane pola na górze
+                                //    locations[xAxis + 1, yAxis - 3] = 8;
+                                //    locations[xAxis, yAxis - 3] = 8;
+
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
                             }
                             else
                             {
@@ -372,30 +461,46 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis + 2] = 3;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis - 1, yAxis] = 8;
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
-                                    locations[xAxis - 1, yAxis + 2] = 8;
-                                    locations[xAxis + 1, yAxis + 2] = 8;
-                                    
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 2));
+                                
 
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
 
-                                    locations[xAxis + 1, yAxis + 3] = 8;
-                                    locations[xAxis, yAxis + 3] = 8;
-                                    locations[xAxis - 1, yAxis + 3] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 3));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 3));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 3));
+
+                                //try
+                                //{
+                                //    locations[xAxis - 1, yAxis] = 8;
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 2] = 8;
+                                //    locations[xAxis + 1, yAxis + 2] = 8;
 
 
-                                }
-                                catch (Exception exc)
-                                {
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
 
-                                }
+                                //    locations[xAxis + 1, yAxis + 3] = 8;
+                                //    locations[xAxis, yAxis + 3] = 8;
+                                //    locations[xAxis - 1, yAxis + 3] = 8;
+
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
                             }
                             else
                             {
@@ -413,28 +518,44 @@ namespace Zadanie20_Statki
                                 locations[xAxis - 2, yAxis] = 3;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis, yAxis + 1] = 8;
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis - 2, yAxis + 1] = 8;
-                                    locations[xAxis - 2, yAxis - 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 2), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 2), Convert.ToByte(yAxis - 1));
+                               
 
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
 
-                                    locations[xAxis - 3, yAxis] = 8;
-                                    locations[xAxis - 3, yAxis - 1] = 8;
-                                    locations[xAxis - 3, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 3), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 3), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 3));
 
-                                }
-                                catch (Exception exc)
-                                {
+                                //try
+                                //{
+                                //    locations[xAxis, yAxis + 1] = 8;
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis - 2, yAxis + 1] = 8;
+                                //    locations[xAxis - 2, yAxis - 1] = 8;
 
-                                }
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis - 3, yAxis] = 8;
+                                //    locations[xAxis - 3, yAxis - 1] = 8;
+                                //    locations[xAxis - 3, yAxis + 1] = 8;
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
 
                             }
                             else
@@ -453,28 +574,44 @@ namespace Zadanie20_Statki
                                 locations[xAxis + 2, yAxis] = 3;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis, yAxis + 1] = 8;
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                    locations[xAxis + 2, yAxis + 1] = 8;
-                                    locations[xAxis + 2, yAxis - 1] = 8;
-                                    
-                                    locations[xAxis - 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 2), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 2), Convert.ToByte(yAxis - 1));
+                                
 
-                                    locations[xAxis + 3, yAxis] = 8;
-                                    locations[xAxis + 3, yAxis - 1] = 8;
-                                    locations[xAxis + 3, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
 
-                                }
-                                catch (Exception exc)
-                                {
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 3), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 3), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 3));
 
-                                }
+                                //try
+                                //{
+                                //    locations[xAxis, yAxis + 1] = 8;
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 2, yAxis + 1] = 8;
+                                //    locations[xAxis + 2, yAxis - 1] = 8;
+
+                                //    locations[xAxis - 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis + 3, yAxis] = 8;
+                                //    locations[xAxis + 3, yAxis - 1] = 8;
+                                //    locations[xAxis + 3, yAxis + 1] = 8;
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
 
                             }
                             else
@@ -535,27 +672,42 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis - 1] = 2;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                   
-                                    locations[xAxis, yAxis + 1] = 8;  // zarezerwowane pola na dole
-                                    locations[xAxis - 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
-
-                                    locations[xAxis - 1, yAxis - 2] = 8; // zarezerwowane pola na górze
-                                    locations[xAxis + 1, yAxis - 2] = 8;
-                                    locations[xAxis, yAxis - 2] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                
 
 
-                                }
-                                catch (Exception exc)
-                                {
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
 
-                                }
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 2));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 2));
+
+                                //try
+                                //{
+                                //    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+
+                                //    locations[xAxis, yAxis + 1] = 8;  // zarezerwowane pola na dole
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis - 1, yAxis - 2] = 8; // zarezerwowane pola na górze
+                                //    locations[xAxis + 1, yAxis - 2] = 8;
+                                //    locations[xAxis, yAxis - 2] = 8;
+
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
                             }
                             else
                             {
@@ -571,27 +723,41 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis + 1] = 2;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis - 1, yAxis] = 8;
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
-                               
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-
-                                    locations[xAxis + 1, yAxis + 2] = 8;
-                                    locations[xAxis, yAxis + 2] = 8;
-                                    locations[xAxis - 1, yAxis + 2] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
+                                
 
 
-                                }
-                                catch (Exception exc)
-                                {
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
 
-                                }
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 2));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 2));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 2));
+                                //try
+                                //{
+                                //    locations[xAxis - 1, yAxis] = 8;
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+
+                                //    locations[xAxis + 1, yAxis + 2] = 8;
+                                //    locations[xAxis, yAxis + 2] = 8;
+                                //    locations[xAxis - 1, yAxis + 2] = 8;
+
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
 
                             }
                             else
@@ -608,26 +774,39 @@ namespace Zadanie20_Statki
                                 locations[xAxis - 1, yAxis] = 2;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis, yAxis + 1] = 8;
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    
-                                    locations[xAxis + 1, yAxis] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                
 
-                                    locations[xAxis - 2, yAxis] = 8;
-                                    locations[xAxis - 2, yAxis - 1] = 8;
-                                    locations[xAxis - 2, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
 
-                                }
-                                catch (Exception exc)
-                                {
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 2), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 2), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 2));
+                                //try
+                                //{
+                                //    locations[xAxis, yAxis + 1] = 8;
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
 
-                                }
+                                //    locations[xAxis + 1, yAxis] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis - 2, yAxis] = 8;
+                                //    locations[xAxis - 2, yAxis - 1] = 8;
+                                //    locations[xAxis - 2, yAxis + 1] = 8;
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
 
                             }
                             else
@@ -644,26 +823,39 @@ namespace Zadanie20_Statki
                                 locations[xAxis + 1, yAxis] = 2;
                                 shipCorrectLocation = true;
 
-                                try
-                                {
-                                    locations[xAxis, yAxis + 1] = 8;
-                                    locations[xAxis, yAxis - 1] = 8;
-                                    locations[xAxis + 1, yAxis + 1] = 8;
-                                    locations[xAxis + 1, yAxis - 1] = 8;
-                                   
-                                    locations[xAxis - 1, yAxis] = 8;
-                                    locations[xAxis - 1, yAxis - 1] = 8;
-                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                                
 
-                                    locations[xAxis + 2, yAxis] = 8;
-                                    locations[xAxis + 2, yAxis - 1] = 8;
-                                    locations[xAxis + 2, yAxis + 1] = 8;
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
 
-                                }
-                                catch (Exception exc)
-                                {
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 2), Convert.ToByte(yAxis - 1));
+                                SetZoneAroundShip(Convert.ToByte(xAxis + 2), Convert.ToByte(yAxis + 1));
+                                SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 2));
+                                //try
+                                //{
+                                //    locations[xAxis, yAxis + 1] = 8;
+                                //    locations[xAxis, yAxis - 1] = 8;
+                                //    locations[xAxis + 1, yAxis + 1] = 8;
+                                //    locations[xAxis + 1, yAxis - 1] = 8;
 
-                                }
+                                //    locations[xAxis - 1, yAxis] = 8;
+                                //    locations[xAxis - 1, yAxis - 1] = 8;
+                                //    locations[xAxis - 1, yAxis + 1] = 8;
+
+                                //    locations[xAxis + 2, yAxis] = 8;
+                                //    locations[xAxis + 2, yAxis - 1] = 8;
+                                //    locations[xAxis + 2, yAxis + 1] = 8;
+
+                                //}
+                                //catch (Exception exc)
+                                //{
+
+                                //}
 
                             }
                             else
@@ -698,24 +890,36 @@ namespace Zadanie20_Statki
                 {
                     locations[xAxis, yAxis] = 1;       // przypisanie wartości 1masztowca lokalizacji startowej
 
-                    try
-                    {
-                        locations[xAxis, yAxis + 1] = 8;
-                        locations[xAxis, yAxis - 1] = 8;
-                        locations[xAxis + 1, yAxis] = 8;
-                        locations[xAxis - 1, yAxis] = 8;
-
-                        locations[xAxis+1, yAxis + 1] = 8;
-                        locations[xAxis-1, yAxis + 1] = 8;
-                        locations[xAxis+1, yAxis - 1] = 8;
-                        locations[xAxis-1, yAxis - 1] = 8;
 
 
-                    }
-                    catch (Exception exc)
-                    {
+                    SetZoneAroundShip(xAxis, Convert.ToByte(yAxis + 1));
+                    SetZoneAroundShip(xAxis, Convert.ToByte(yAxis - 1));
+                    SetZoneAroundShip(Convert.ToByte(xAxis + 1), yAxis);
+                    SetZoneAroundShip(Convert.ToByte(xAxis - 1), yAxis);
 
-                    }
+                    SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis + 1));
+                    SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis + 1));
+                    SetZoneAroundShip(Convert.ToByte(xAxis + 1), Convert.ToByte(yAxis - 1));
+                    SetZoneAroundShip(Convert.ToByte(xAxis - 1), Convert.ToByte(yAxis - 1));
+
+                    //try
+                    //{
+                    //    locations[xAxis, yAxis + 1] = 8;
+                    //    locations[xAxis, yAxis - 1] = 8;
+                    //    locations[xAxis + 1, yAxis] = 8;
+                    //    locations[xAxis - 1, yAxis] = 8;
+
+                    //    locations[xAxis + 1, yAxis + 1] = 8;
+                    //    locations[xAxis - 1, yAxis + 1] = 8;
+                    //    locations[xAxis + 1, yAxis - 1] = 8;
+                    //    locations[xAxis - 1, yAxis - 1] = 8;
+
+
+                    //}
+                    //catch (Exception exc)
+                    //{
+
+                    //}
 
                     locationNotAvailable = false;
                 }
@@ -726,6 +930,22 @@ namespace Zadanie20_Statki
         }
 
         Random random = new Random((Int32)DateTime.Now.Ticks);
+
+
+        private void SetZoneAroundShip(byte alterXAxis, byte alterYAxis)
+        {
+            try
+            {
+                locations[alterXAxis, alterYAxis ] = 8;
+            }
+            catch
+            {
+
+            }
+        }
+
+
+
 
         //private void ShipLocation (byte shipSize)
         //{
