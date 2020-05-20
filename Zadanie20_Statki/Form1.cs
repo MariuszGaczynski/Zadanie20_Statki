@@ -38,6 +38,10 @@ namespace Zadanie20_Statki
             BuildingShips1Masted();
             BuildingShips1Masted();
 
+            List<byte> locationsList = new List<byte>();
+
+           
+
             //foreach (Control c in tableLayoutPanel.Controls)
             //{
             //     controls.Add(c);
@@ -109,6 +113,32 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis - 2] = 4;
                                 locations[xAxis, yAxis - 3] = 4;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis - 2] = 8;
+                                    locations[xAxis + 1, yAxis - 2] = 8;
+                                    locations[xAxis - 1, yAxis - 3] = 8;
+                                    locations[xAxis + 1, yAxis - 3] = 8;
+
+                                    locations[xAxis , yAxis+1] = 8;  // zarezerwowane pola na dole
+                                    locations[xAxis-1, yAxis + 1] = 8;
+                                    locations[xAxis+1, yAxis + 1] = 8;
+
+                                    locations[xAxis - 1, yAxis - 4] = 8; // zarezerwowane pola na górze
+                                    locations[xAxis + 1, yAxis - 4] = 8;
+                                    locations[xAxis , yAxis - 4] = 8;
+
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
                             }
                             else
                             {
@@ -127,6 +157,33 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis + 2] = 4;
                                 locations[xAxis, yAxis + 3] = 4;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis - 1, yAxis] = 8;
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                    locations[xAxis - 1, yAxis + 2] = 8;
+                                    locations[xAxis + 1, yAxis + 2] = 8;
+                                    locations[xAxis + 1, yAxis + 3] = 8;
+                                    locations[xAxis - 1, yAxis + 3] = 8;
+
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+
+                                    locations[xAxis + 1, yAxis + 4] = 8;
+                                    locations[xAxis, yAxis + 4] = 8;
+                                    locations[xAxis - 1, yAxis + 4] = 8;
+
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
+
                             }
                             else
                             {
@@ -145,6 +202,32 @@ namespace Zadanie20_Statki
                                 locations[xAxis - 2, yAxis] = 4;
                                 locations[xAxis - 3, yAxis] = 4;
                                 shipCorrectLocation = true;
+
+
+                                try
+                                {
+                                    locations[xAxis, yAxis +1] = 8;
+                                    locations[xAxis, yAxis -1] = 8;
+                                    locations[xAxis - 1, yAxis+1] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis -2, yAxis + 1] = 8;
+                                    locations[xAxis -2, yAxis -1] = 8;
+                                    locations[xAxis -3, yAxis + 1] = 8;
+                                    locations[xAxis -3, yAxis -1] = 8;
+
+                                    locations[xAxis +1, yAxis] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                    locations[xAxis - 4, yAxis] = 8;
+                                    locations[xAxis - 4, yAxis - 1] = 8;
+                                    locations[xAxis - 4, yAxis + 1] = 8;
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
                             }
                             else
                             {
@@ -163,7 +246,32 @@ namespace Zadanie20_Statki
                                 locations[xAxis + 2, yAxis] = 4;
                                 locations[xAxis + 3, yAxis] = 4;
                                 shipCorrectLocation = true;
- 
+
+                                try
+                                {
+                                    locations[xAxis, yAxis + 1] = 8;
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                    locations[xAxis + 2, yAxis + 1] = 8;
+                                    locations[xAxis + 2, yAxis - 1] = 8;
+                                    locations[xAxis + 3, yAxis + 1] = 8;
+                                    locations[xAxis + 3, yAxis - 1] = 8;
+
+                                    locations[xAxis - 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+
+                                    locations[xAxis + 4, yAxis] = 8;
+                                    locations[xAxis + 4, yAxis - 1] = 8;
+                                    locations[xAxis + 4, yAxis + 1] = 8;
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
+
                             }
                             else
                             {
@@ -223,6 +331,30 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis - 1] = 3;
                                 locations[xAxis, yAxis - 2] = 3;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis - 2] = 8;
+                                    locations[xAxis + 1, yAxis - 2] = 8;
+
+                                    locations[xAxis, yAxis + 1] = 8;  // zarezerwowane pola na dole
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                    locations[xAxis - 1, yAxis - 3] = 8; // zarezerwowane pola na górze
+                                    locations[xAxis + 1, yAxis - 3] = 8;
+                                    locations[xAxis, yAxis - 3] = 8;
+
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
                             }
                             else
                             {
@@ -239,6 +371,31 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis + 1] = 3;
                                 locations[xAxis, yAxis + 2] = 3;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis - 1, yAxis] = 8;
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                    locations[xAxis - 1, yAxis + 2] = 8;
+                                    locations[xAxis + 1, yAxis + 2] = 8;
+                                    
+
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+
+                                    locations[xAxis + 1, yAxis + 3] = 8;
+                                    locations[xAxis, yAxis + 3] = 8;
+                                    locations[xAxis - 1, yAxis + 3] = 8;
+
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
                             }
                             else
                             {
@@ -255,6 +412,30 @@ namespace Zadanie20_Statki
                                 locations[xAxis - 1, yAxis] = 3;
                                 locations[xAxis - 2, yAxis] = 3;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis, yAxis + 1] = 8;
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis - 2, yAxis + 1] = 8;
+                                    locations[xAxis - 2, yAxis - 1] = 8;
+
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                    locations[xAxis - 3, yAxis] = 8;
+                                    locations[xAxis - 3, yAxis - 1] = 8;
+                                    locations[xAxis - 3, yAxis + 1] = 8;
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
+
                             }
                             else
                             {
@@ -271,6 +452,29 @@ namespace Zadanie20_Statki
                                 locations[xAxis + 1, yAxis] = 3;
                                 locations[xAxis + 2, yAxis] = 3;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis, yAxis + 1] = 8;
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                    locations[xAxis + 2, yAxis + 1] = 8;
+                                    locations[xAxis + 2, yAxis - 1] = 8;
+                                    
+                                    locations[xAxis - 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+
+                                    locations[xAxis + 3, yAxis] = 8;
+                                    locations[xAxis + 3, yAxis - 1] = 8;
+                                    locations[xAxis + 3, yAxis + 1] = 8;
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
 
                             }
                             else
@@ -330,6 +534,28 @@ namespace Zadanie20_Statki
                             {
                                 locations[xAxis, yAxis - 1] = 2;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis - 1, yAxis] = 8;  // zarezerwowane pola po bokach okrętu
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                   
+                                    locations[xAxis, yAxis + 1] = 8;  // zarezerwowane pola na dole
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                    locations[xAxis - 1, yAxis - 2] = 8; // zarezerwowane pola na górze
+                                    locations[xAxis + 1, yAxis - 2] = 8;
+                                    locations[xAxis, yAxis - 2] = 8;
+
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
                             }
                             else
                             {
@@ -344,6 +570,29 @@ namespace Zadanie20_Statki
                             {
                                 locations[xAxis, yAxis + 1] = 2;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis - 1, yAxis] = 8;
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+                               
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+
+                                    locations[xAxis + 1, yAxis + 2] = 8;
+                                    locations[xAxis, yAxis + 2] = 8;
+                                    locations[xAxis - 1, yAxis + 2] = 8;
+
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
+
                             }
                             else
                             {
@@ -358,6 +607,28 @@ namespace Zadanie20_Statki
                             {
                                 locations[xAxis - 1, yAxis] = 2;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis, yAxis + 1] = 8;
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    
+                                    locations[xAxis + 1, yAxis] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+
+                                    locations[xAxis - 2, yAxis] = 8;
+                                    locations[xAxis - 2, yAxis - 1] = 8;
+                                    locations[xAxis - 2, yAxis + 1] = 8;
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
+
                             }
                             else
                             {
@@ -372,6 +643,27 @@ namespace Zadanie20_Statki
                             {
                                 locations[xAxis + 1, yAxis] = 2;
                                 shipCorrectLocation = true;
+
+                                try
+                                {
+                                    locations[xAxis, yAxis + 1] = 8;
+                                    locations[xAxis, yAxis - 1] = 8;
+                                    locations[xAxis + 1, yAxis + 1] = 8;
+                                    locations[xAxis + 1, yAxis - 1] = 8;
+                                   
+                                    locations[xAxis - 1, yAxis] = 8;
+                                    locations[xAxis - 1, yAxis - 1] = 8;
+                                    locations[xAxis - 1, yAxis + 1] = 8;
+
+                                    locations[xAxis + 2, yAxis] = 8;
+                                    locations[xAxis + 2, yAxis - 1] = 8;
+                                    locations[xAxis + 2, yAxis + 1] = 8;
+
+                                }
+                                catch (Exception exc)
+                                {
+
+                                }
 
                             }
                             else
@@ -405,6 +697,26 @@ namespace Zadanie20_Statki
                 else
                 {
                     locations[xAxis, yAxis] = 1;       // przypisanie wartości 1masztowca lokalizacji startowej
+
+                    try
+                    {
+                        locations[xAxis, yAxis + 1] = 8;
+                        locations[xAxis, yAxis - 1] = 8;
+                        locations[xAxis + 1, yAxis] = 8;
+                        locations[xAxis - 1, yAxis] = 8;
+
+                        locations[xAxis+1, yAxis + 1] = 8;
+                        locations[xAxis-1, yAxis + 1] = 8;
+                        locations[xAxis+1, yAxis - 1] = 8;
+                        locations[xAxis-1, yAxis - 1] = 8;
+
+
+                    }
+                    catch (Exception exc)
+                    {
+
+                    }
+
                     locationNotAvailable = false;
                 }
 
