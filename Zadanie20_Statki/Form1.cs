@@ -23,6 +23,8 @@ namespace Zadanie20_Statki
 
         List<sbyte> locationsList = new List<sbyte>();   // lista wartości na kolejnych lokacjach
 
+        List<Ship> listOfShips = new List<Ship>();
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -58,7 +60,7 @@ namespace Zadanie20_Statki
             foreach (Control c in tableLayoutPanel.Controls) // properties Tag przycisku taki sam jak tekst na guziku
             {
                 c.Tag = c.Text;
-
+                //c.TabIndex = Convert.ToInt32(c.Text);
             }
 
             foreach (Control c in tableLayoutPanel.Controls) // zamiana tekstów na guziku na "?" niewiadomą 
@@ -67,6 +69,7 @@ namespace Zadanie20_Statki
 
             }
 
+            
             foreach (Control c in tableLayoutPanel.Controls) 
             {
                 c.BackColor = Color.DarkBlue;
@@ -106,6 +109,11 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis - 3] = 4;
                                 shipCorrectLocation = true;
 
+                                Ship ship = new Ship(xAxis, yAxis, xAxis, Convert.ToSByte(yAxis - 1), xAxis, 
+                                    Convert.ToSByte(yAxis - 2), xAxis, Convert.ToSByte(yAxis - 3));
+
+                                listOfShips.Add(ship);
+
                                 SetZoneAroundShip(Convert.ToSByte(xAxis - 1), yAxis);
                                 SetZoneAroundShip(Convert.ToSByte(xAxis + 1), yAxis);
                                 SetZoneAroundShip(Convert.ToSByte(xAxis - 1), Convert.ToSByte(yAxis - 1));
@@ -143,6 +151,10 @@ namespace Zadanie20_Statki
                                 locations[xAxis, yAxis + 3] = 4;
                                 shipCorrectLocation = true;
 
+                                Ship ship = new Ship(xAxis, yAxis, xAxis, Convert.ToSByte(yAxis + 1), xAxis,
+                                    Convert.ToSByte(yAxis + 2), xAxis, Convert.ToSByte(yAxis + 3));
+
+                                listOfShips.Add(ship);
 
                                 SetZoneAroundShip(Convert.ToSByte(xAxis - 1), yAxis);
                                 SetZoneAroundShip(Convert.ToSByte(xAxis + 1), yAxis);
@@ -181,6 +193,11 @@ namespace Zadanie20_Statki
                                 locations[xAxis - 3, yAxis] = 4;
                                 shipCorrectLocation = true;
 
+                                Ship ship = new Ship(xAxis, yAxis, Convert.ToSByte(xAxis - 1), yAxis, Convert.ToSByte(xAxis - 2), yAxis,
+                                    Convert.ToSByte(xAxis - 3), yAxis);
+
+                                listOfShips.Add(ship);
+
                                 SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis +1));
                                 SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis - 1));
                                 SetZoneAroundShip(Convert.ToSByte(xAxis - 1), Convert.ToSByte(yAxis + 1));
@@ -217,6 +234,11 @@ namespace Zadanie20_Statki
                                 locations[xAxis + 2, yAxis] = 4;
                                 locations[xAxis + 3, yAxis] = 4;
                                 shipCorrectLocation = true;
+
+                                Ship ship = new Ship(xAxis, yAxis, Convert.ToSByte(xAxis + 1), yAxis, Convert.ToSByte(xAxis + 2), yAxis,
+                                    Convert.ToSByte(xAxis + 3), yAxis);
+
+                                listOfShips.Add(ship);
 
                                 SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis + 1));
                                 SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis - 1));
@@ -301,6 +323,11 @@ namespace Zadanie20_Statki
                                     locations[xAxis, yAxis - 2] = 3;
                                     shipCorrectLocation = true;
 
+                                    Ship ship = new Ship(xAxis, yAxis, xAxis, Convert.ToSByte(yAxis - 1), xAxis,
+                                    Convert.ToSByte(yAxis - 2));
+
+                                    listOfShips.Add(ship);
+
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), yAxis);
                                     SetZoneAroundShip(Convert.ToSByte(xAxis + 1), yAxis);
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), Convert.ToSByte(yAxis - 1));
@@ -336,6 +363,11 @@ namespace Zadanie20_Statki
                                     locations[xAxis, yAxis + 2] = 3;
                                     shipCorrectLocation = true;
 
+                                    Ship ship = new Ship(xAxis, yAxis, xAxis, Convert.ToSByte(yAxis + 1), xAxis,
+                                    Convert.ToSByte(yAxis + 2));
+
+                                    listOfShips.Add(ship);
+
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), yAxis);
                                     SetZoneAroundShip(Convert.ToSByte(xAxis + 1), yAxis);
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), Convert.ToSByte(yAxis + 1));
@@ -369,6 +401,10 @@ namespace Zadanie20_Statki
                                     locations[xAxis - 2, yAxis] = 3;
                                     shipCorrectLocation = true;
 
+                                    Ship ship = new Ship(xAxis, yAxis, Convert.ToSByte(xAxis - 1), yAxis, Convert.ToSByte(xAxis - 2), yAxis);
+
+                                    listOfShips.Add(ship);
+
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis + 1));
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis - 1));
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), Convert.ToSByte(yAxis + 1));
@@ -401,6 +437,10 @@ namespace Zadanie20_Statki
                                     locations[xAxis + 1, yAxis] = 3;
                                     locations[xAxis + 2, yAxis] = 3;
                                     shipCorrectLocation = true;
+
+                                    Ship ship = new Ship(xAxis, yAxis, Convert.ToSByte(xAxis + 1), yAxis, Convert.ToSByte(xAxis + 2), yAxis);
+                                    
+                                    listOfShips.Add(ship);
 
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis + 1));
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis - 1));
@@ -484,6 +524,10 @@ namespace Zadanie20_Statki
                                     locations[xAxis, yAxis - 1] = 2;
                                     shipCorrectLocation = true;
 
+                                    Ship ship = new Ship(xAxis, yAxis, xAxis, Convert.ToSByte(yAxis - 1));
+
+                                    listOfShips.Add(ship);
+
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), yAxis);
                                     SetZoneAroundShip(Convert.ToSByte(xAxis + 1), yAxis);
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), Convert.ToSByte(yAxis - 1));
@@ -512,6 +556,10 @@ namespace Zadanie20_Statki
                                     locations[xAxis, yAxis] = 2;       // przypisanie wartości 2masztowca lokalizacji startowej
                                     locations[xAxis, yAxis + 1] = 2;
                                     shipCorrectLocation = true;
+
+                                    Ship ship = new Ship(xAxis, yAxis, xAxis, Convert.ToSByte(yAxis + 1));
+
+                                    listOfShips.Add(ship);
 
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), yAxis);
                                     SetZoneAroundShip(Convert.ToSByte(xAxis + 1), yAxis);
@@ -542,6 +590,10 @@ namespace Zadanie20_Statki
                                     locations[xAxis - 1, yAxis] = 2;
                                     shipCorrectLocation = true;
 
+                                    Ship ship = new Ship(xAxis, yAxis, Convert.ToSByte(xAxis - 1), yAxis);
+
+                                    listOfShips.Add(ship);
+
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis + 1));
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis - 1));
                                     SetZoneAroundShip(Convert.ToSByte(xAxis - 1), Convert.ToSByte(yAxis + 1));
@@ -571,6 +623,10 @@ namespace Zadanie20_Statki
                                     locations[xAxis, yAxis] = 2;       // przypisanie wartości 2masztowca lokalizacji startowej
                                     locations[xAxis + 1, yAxis] = 2;
                                     shipCorrectLocation = true;
+
+                                    Ship ship = new Ship(xAxis, yAxis, Convert.ToSByte(xAxis + 1), yAxis);
+
+                                    listOfShips.Add(ship);
 
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis + 1));
                                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis - 1));
@@ -620,6 +676,9 @@ namespace Zadanie20_Statki
                 {
                     locations[xAxis, yAxis] = 1;       // przypisanie wartości 1masztowca lokalizacji startowej
 
+                    Ship ship = new Ship(xAxis, yAxis);
+
+                    listOfShips.Add(ship);
 
                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis + 1));
                     SetZoneAroundShip(xAxis, Convert.ToSByte(yAxis - 1));
@@ -660,12 +719,14 @@ namespace Zadanie20_Statki
         public int bombsDroped = 0;
         private void Btn_Click(object sender, EventArgs e)
         {
+            
+
             Button btn = (Button)sender;
 
             bombsDroped++;
             lbl_BombsDroped.Text = bombsDroped.ToString();
 
-            btn.Text = string.Empty;
+            
             btn.Enabled = false;
 
             int btnIndex = Convert.ToInt32(btn.Tag) - 1;
@@ -673,24 +734,72 @@ namespace Zadanie20_Statki
             if (locationsList[btnIndex] == 0 || locationsList[btnIndex] == 8)
             {
                 btn.BackColor = Color.LightBlue;
+                btn.Text = string.Empty;
             }
             else
             {
                 btn.BackColor = Color.DarkOrange;
+                btn.ForeColor = Color.DarkOrange;
                 btn.Text = locationsList[btnIndex].ToString();
-                //locationsList[btnIndex] = 0;
+                
+                CheckForSunken();
 
-                //if (SurroundingsIsEmpty(btnIndex))
-                //{
-                //    btn.BackColor = Color.DarkRed;
-                //}
             }
 
-           
+            //CheckForSunken();
 
 
         }
 
+
+        private void CheckForSunken ()
+        {
+
+            foreach (Ship ship in listOfShips)
+            {
+                 
+                int index1 = (10 * ship.mast1[0]) + (ship.mast1[1]  );
+                int index2 = (10 * ship.mast2[0]) + (ship.mast2[1] );
+                int index3 = (10 * ship.mast3[0]) + (ship.mast3[1] );
+                int index4 = (10 * ship.mast4[0]) + (ship.mast4[1]);
+
+                if (tableLayoutPanel.Controls[index1].Text == "4"
+                    && tableLayoutPanel.Controls[index1].BackColor == Color.DarkOrange
+                    && tableLayoutPanel.Controls[index2].BackColor == Color.DarkOrange
+                    && tableLayoutPanel.Controls[index3].BackColor == Color.DarkOrange
+                    && tableLayoutPanel.Controls[index4].BackColor == Color.DarkOrange)
+                {
+                    tableLayoutPanel.Controls[index1].BackColor = Color.Red;
+                    tableLayoutPanel.Controls[index2].BackColor = Color.Red;
+                    tableLayoutPanel.Controls[index3].BackColor = Color.Red;
+                    tableLayoutPanel.Controls[index4].BackColor = Color.Red;
+
+                }
+                else if(tableLayoutPanel.Controls[index1].Text == "3"
+                    && tableLayoutPanel.Controls[index1].BackColor == Color.DarkOrange
+                    && tableLayoutPanel.Controls[index2].BackColor == Color.DarkOrange
+                    && tableLayoutPanel.Controls[index3].BackColor == Color.DarkOrange)
+                {
+                    tableLayoutPanel.Controls[index1].BackColor = Color.Red;
+                    tableLayoutPanel.Controls[index2].BackColor = Color.Red;
+                    tableLayoutPanel.Controls[index3].BackColor = Color.Red;
+                }
+                else if (tableLayoutPanel.Controls[index1].Text == "2"
+                    && tableLayoutPanel.Controls[index1].BackColor == Color.DarkOrange
+                    && tableLayoutPanel.Controls[index2].BackColor == Color.DarkOrange)
+                {
+                    tableLayoutPanel.Controls[index1].BackColor = Color.Red;
+                    tableLayoutPanel.Controls[index2].BackColor = Color.Red;
+                }
+                else if (tableLayoutPanel.Controls[index1].Text == "1"
+                    && tableLayoutPanel.Controls[index1].BackColor == Color.DarkOrange)
+                {
+                    tableLayoutPanel.Controls[index1].BackColor = Color.Red;
+                }
+
+            }
+
+        }
 
         //private bool SurroundingsIsEmpty(int btnIndex)
         //{
@@ -764,4 +873,53 @@ namespace Zadanie20_Statki
             }
         }
     }
+
+
+    public class Ship
+    {
+        public sbyte[] mast1 = new sbyte[2];
+        public sbyte[] mast2 = new sbyte[2];
+        public sbyte[] mast3 = new sbyte[2];
+        public sbyte[] mast4 = new sbyte[2];
+
+        public Ship(sbyte xMast1, sbyte yMast1)
+        {
+            mast1[0] = xMast1;
+            mast1[1] = yMast1;
+        }
+        public Ship(sbyte xMast1, sbyte yMast1, sbyte xMast2, sbyte yMast2)
+        {
+            mast1[0] = xMast1;
+            mast1[1] = yMast1;
+            mast2[0] = xMast2;
+            mast2[1] = yMast2;
+        }
+        public Ship(sbyte xMast1, sbyte yMast1, sbyte xMast2, sbyte yMast2, sbyte xMast3, sbyte yMast3)
+        {
+            mast1[0] = xMast1;
+            mast1[1] = yMast1;
+            mast2[0] = xMast2;
+            mast2[1] = yMast2;
+            mast3[0] = xMast3;
+            mast3[1] = yMast3;
+        }
+
+        public Ship(sbyte xMast1, sbyte yMast1, sbyte xMast2, sbyte yMast2,
+            sbyte xMast3, sbyte yMast3, sbyte xMast4, sbyte yMast4)
+        {
+            mast1[0] = xMast1;
+            mast1[1] = yMast1;
+            mast2[0] = xMast2;
+            mast2[1] = yMast2;
+            mast3[0] = xMast3;
+            mast3[1] = yMast3;
+            mast4[0] = xMast4;
+            mast4[1] = yMast4;
+        }
+
+
+
+    }
+
+
 }
