@@ -133,6 +133,16 @@
             this.textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_BombsDroped = new System.Windows.Forms.Label();
+            this.lbl_4masted = new System.Windows.Forms.Label();
+            this.lbl_3masted1 = new System.Windows.Forms.Label();
+            this.lbl_3masted2 = new System.Windows.Forms.Label();
+            this.lbl_2masted1 = new System.Windows.Forms.Label();
+            this.lbl_2masted2 = new System.Windows.Forms.Label();
+            this.lbl_2masted3 = new System.Windows.Forms.Label();
+            this.lbl_1masted1 = new System.Windows.Forms.Label();
+            this.lbl_1masted3 = new System.Windows.Forms.Label();
+            this.lbl_1masted2 = new System.Windows.Forms.Label();
+            this.lbl_1masted4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -249,6 +259,7 @@
             this.tableLayoutPanel.Controls.Add(this.button98, 7, 9);
             this.tableLayoutPanel.Controls.Add(this.button99, 8, 9);
             this.tableLayoutPanel.Controls.Add(this.button100, 9, 9);
+            this.tableLayoutPanel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
             this.tableLayoutPanel.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 10;
@@ -1385,41 +1396,156 @@
             this.textBox.Location = new System.Drawing.Point(536, 12);
             this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(328, 383);
+            this.textBox.Size = new System.Drawing.Size(328, 370);
             this.textBox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(630, 415);
+            this.label1.Font = new System.Drawing.Font("Stencil", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(610, 400);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 25);
+            this.label1.Size = new System.Drawing.Size(199, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Bombs Droped:";
             // 
             // lbl_BombsDroped
             // 
             this.lbl_BombsDroped.AutoSize = true;
-            this.lbl_BombsDroped.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_BombsDroped.Location = new System.Drawing.Point(695, 460);
+            this.lbl_BombsDroped.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BombsDroped.Location = new System.Drawing.Point(671, 433);
             this.lbl_BombsDroped.Name = "lbl_BombsDroped";
-            this.lbl_BombsDroped.Size = new System.Drawing.Size(37, 39);
+            this.lbl_BombsDroped.Size = new System.Drawing.Size(71, 76);
             this.lbl_BombsDroped.TabIndex = 4;
             this.lbl_BombsDroped.Text = "0";
+            // 
+            // lbl_4masted
+            // 
+            this.lbl_4masted.AutoSize = true;
+            this.lbl_4masted.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_4masted.Location = new System.Drawing.Point(538, 396);
+            this.lbl_4masted.Name = "lbl_4masted";
+            this.lbl_4masted.Size = new System.Drawing.Size(62, 13);
+            this.lbl_4masted.TabIndex = 5;
+            this.lbl_4masted.Text = "_L_L_L_L_";
+            // 
+            // lbl_3masted1
+            // 
+            this.lbl_3masted1.AutoSize = true;
+            this.lbl_3masted1.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_3masted1.Location = new System.Drawing.Point(544, 421);
+            this.lbl_3masted1.Name = "lbl_3masted1";
+            this.lbl_3masted1.Size = new System.Drawing.Size(50, 13);
+            this.lbl_3masted1.TabIndex = 6;
+            this.lbl_3masted1.Text = "_L_L_L_";
+            // 
+            // lbl_3masted2
+            // 
+            this.lbl_3masted2.AutoSize = true;
+            this.lbl_3masted2.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_3masted2.Location = new System.Drawing.Point(544, 446);
+            this.lbl_3masted2.Name = "lbl_3masted2";
+            this.lbl_3masted2.Size = new System.Drawing.Size(50, 13);
+            this.lbl_3masted2.TabIndex = 7;
+            this.lbl_3masted2.Text = "_L_L_L_";
+            // 
+            // lbl_2masted1
+            // 
+            this.lbl_2masted1.AutoSize = true;
+            this.lbl_2masted1.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_2masted1.Location = new System.Drawing.Point(550, 471);
+            this.lbl_2masted1.Name = "lbl_2masted1";
+            this.lbl_2masted1.Size = new System.Drawing.Size(38, 13);
+            this.lbl_2masted1.TabIndex = 8;
+            this.lbl_2masted1.Text = "_L_L_";
+            // 
+            // lbl_2masted2
+            // 
+            this.lbl_2masted2.AutoSize = true;
+            this.lbl_2masted2.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_2masted2.Location = new System.Drawing.Point(550, 496);
+            this.lbl_2masted2.Name = "lbl_2masted2";
+            this.lbl_2masted2.Size = new System.Drawing.Size(38, 13);
+            this.lbl_2masted2.TabIndex = 9;
+            this.lbl_2masted2.Text = "_L_L_";
+            // 
+            // lbl_2masted3
+            // 
+            this.lbl_2masted3.AutoSize = true;
+            this.lbl_2masted3.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_2masted3.Location = new System.Drawing.Point(817, 396);
+            this.lbl_2masted3.Name = "lbl_2masted3";
+            this.lbl_2masted3.Size = new System.Drawing.Size(38, 13);
+            this.lbl_2masted3.TabIndex = 10;
+            this.lbl_2masted3.Text = "_L_L_";
+            // 
+            // lbl_1masted1
+            // 
+            this.lbl_1masted1.AutoSize = true;
+            this.lbl_1masted1.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_1masted1.Location = new System.Drawing.Point(823, 421);
+            this.lbl_1masted1.Name = "lbl_1masted1";
+            this.lbl_1masted1.Size = new System.Drawing.Size(26, 13);
+            this.lbl_1masted1.TabIndex = 11;
+            this.lbl_1masted1.Text = "_L_";
+            // 
+            // lbl_1masted3
+            // 
+            this.lbl_1masted3.AutoSize = true;
+            this.lbl_1masted3.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_1masted3.Location = new System.Drawing.Point(823, 471);
+            this.lbl_1masted3.Name = "lbl_1masted3";
+            this.lbl_1masted3.Size = new System.Drawing.Size(26, 13);
+            this.lbl_1masted3.TabIndex = 12;
+            this.lbl_1masted3.Text = "_L_";
+            // 
+            // lbl_1masted2
+            // 
+            this.lbl_1masted2.AutoSize = true;
+            this.lbl_1masted2.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_1masted2.Location = new System.Drawing.Point(823, 446);
+            this.lbl_1masted2.Name = "lbl_1masted2";
+            this.lbl_1masted2.Size = new System.Drawing.Size(26, 13);
+            this.lbl_1masted2.TabIndex = 13;
+            this.lbl_1masted2.Text = "_L_";
+            // 
+            // lbl_1masted4
+            // 
+            this.lbl_1masted4.AutoSize = true;
+            this.lbl_1masted4.Font = new System.Drawing.Font("Bernard MT Condensed", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_1masted4.Location = new System.Drawing.Point(823, 496);
+            this.lbl_1masted4.Name = "lbl_1masted4";
+            this.lbl_1masted4.Size = new System.Drawing.Size(26, 13);
+            this.lbl_1masted4.TabIndex = 14;
+            this.lbl_1masted4.Text = "_L_";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 526);
+            this.Controls.Add(this.lbl_1masted4);
+            this.Controls.Add(this.lbl_1masted2);
+            this.Controls.Add(this.lbl_1masted3);
+            this.Controls.Add(this.lbl_1masted1);
+            this.Controls.Add(this.lbl_2masted3);
+            this.Controls.Add(this.lbl_2masted2);
+            this.Controls.Add(this.lbl_2masted1);
+            this.Controls.Add(this.lbl_3masted2);
+            this.Controls.Add(this.lbl_3masted1);
+            this.Controls.Add(this.lbl_4masted);
             this.Controls.Add(this.lbl_BombsDroped);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.btn_Help);
             this.Controls.Add(this.tableLayoutPanel);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(892, 564);
+            this.MinimumSize = new System.Drawing.Size(892, 564);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "One Player Battleships";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1534,6 +1660,16 @@
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_BombsDroped;
+        private System.Windows.Forms.Label lbl_4masted;
+        private System.Windows.Forms.Label lbl_3masted1;
+        private System.Windows.Forms.Label lbl_3masted2;
+        private System.Windows.Forms.Label lbl_2masted1;
+        private System.Windows.Forms.Label lbl_2masted2;
+        private System.Windows.Forms.Label lbl_2masted3;
+        private System.Windows.Forms.Label lbl_1masted1;
+        private System.Windows.Forms.Label lbl_1masted3;
+        private System.Windows.Forms.Label lbl_1masted2;
+        private System.Windows.Forms.Label lbl_1masted4;
     }
 }
 

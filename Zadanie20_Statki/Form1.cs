@@ -785,6 +785,7 @@ namespace Zadanie20_Statki
                     textBox.Text += "You have just sunk 4-masted Battleship. It was huge dreadnought type battleship. Well done!";
                     textBox.Text += Environment.NewLine;
                     ship.shipActive = false;
+                    lbl_4masted.Text = string.Empty; 
                     CheckWholeFleet();
 
                 }
@@ -800,6 +801,15 @@ namespace Zadanie20_Statki
                     textBox.Text += "You have just sunk 3-masted Battleship. It was powerful and well armored cruiser. Well done!";
                     textBox.Text += Environment.NewLine;
                     ship.shipActive = false;
+                    if (lbl_3masted1.Text != string.Empty)
+                    {
+                        lbl_3masted1.Text = string.Empty;
+                    }
+
+                    else 
+                    {
+                        lbl_3masted2.Text = string.Empty;
+                    }
                     CheckWholeFleet();
 
                 }
@@ -813,6 +823,19 @@ namespace Zadanie20_Statki
                     textBox.Text += "You have just sunk 2-masted Battleship. It was quick and dangerous destroyer. Well done!";
                     textBox.Text += Environment.NewLine;
                     ship.shipActive = false;
+
+                    if (lbl_2masted1.Text != string.Empty)
+                    {
+                        lbl_2masted1.Text = string.Empty;
+                    }
+                    else if (lbl_2masted1.Text == string.Empty && lbl_2masted2.Text != string.Empty)
+                    {
+                        lbl_2masted2.Text = string.Empty;
+                    }
+                    else
+                    {
+                        lbl_2masted3.Text = string.Empty;
+                    }
                     CheckWholeFleet();
 
                 }
@@ -824,6 +847,23 @@ namespace Zadanie20_Statki
                     textBox.Text += "You have just sunk 1-masted Battleship. It wasn't easy to find this little torpedo boat. Well done!";
                     textBox.Text += Environment.NewLine;
                     ship.shipActive = false;
+                    if (lbl_1masted1.Text != string.Empty)
+                    {
+                        lbl_1masted1.Text = string.Empty;
+                    }
+                    else if (lbl_1masted1.Text == string.Empty && lbl_1masted2.Text != string.Empty)
+                    {
+                        lbl_1masted2.Text = string.Empty;
+                    }
+                    else if (lbl_1masted1.Text == string.Empty && lbl_1masted2.Text == string.Empty 
+                        && lbl_1masted3.Text != string.Empty)
+                    {
+                        lbl_1masted3.Text = string.Empty;
+                    }
+                    else
+                    {
+                        lbl_1masted4.Text = string.Empty;
+                    }
                     CheckWholeFleet();
 
                 }
@@ -882,6 +922,7 @@ namespace Zadanie20_Statki
                 textBox.Text += Environment.NewLine;
                 textBox.Text += "Good work Captain! You defeated all enemy  Battleships. You sunk whole fleet. It was epic!";
                 textBox.Text += Environment.NewLine;
+                tableLayoutPanel.Enabled = false;
             }
 
         }
