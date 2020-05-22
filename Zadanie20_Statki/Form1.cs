@@ -872,33 +872,7 @@ namespace Zadanie20_Statki
 
             
         }
-        //if (listOfShips.Count == 0)
-        //{
-        //    textBox.Text += "Good work Captain! You defeated all enemy  Battleships. You sunk whole fleet. It was epic!";
-        //    textBox.Text += Environment.NewLine;
-        //}
-
-
-
-        //private bool SurroundingsIsEmpty(int btnIndex)
-        //{
-        //    if (CheckLocation(btnIndex + 1) == true
-        //        && CheckLocation(btnIndex - 1) == true
-        //        && CheckLocation(btnIndex + 10) == true
-        //        && CheckLocation(btnIndex - 10) == true
-        //        && CheckLocation(btnIndex + 9) == true
-        //        && CheckLocation(btnIndex - 9) == true
-        //        && CheckLocation(btnIndex + 11) == true
-        //        && CheckLocation(btnIndex - 11) == true)
-        //    {
-        //        return true;
-        //    }
-        //    else
-        //    {
-        //        return false;
-        //    }
-
-        //}
+     
         private void CheckWholeFleet()
         {
             bool fleetDestroyed = false;
@@ -955,9 +929,10 @@ namespace Zadanie20_Statki
             {
                 int btnIndex = Convert.ToInt32(c.Tag) - 1;
 
-                if (locationsList[btnIndex] == 0 || locationsList[btnIndex] == 8)
+                if (locationsList[btnIndex] == 0 || locationsList[btnIndex] == 8
+                    || c.BackColor == Color.DarkOrange || c.BackColor == Color.Red)
                 {
-                    //c.BackColor = Color.DarkBlue;
+                    
                 }
                 else
                 {
