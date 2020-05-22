@@ -130,7 +130,7 @@
             this.button99 = new System.Windows.Forms.Button();
             this.button100 = new System.Windows.Forms.Button();
             this.btn_Help = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_BombsDroped = new System.Windows.Forms.Label();
             this.tableLayoutPanel.SuspendLayout();
@@ -1368,8 +1368,10 @@
             // btn_Help
             // 
             this.btn_Help.Cursor = System.Windows.Forms.Cursors.Help;
+            this.btn_Help.FlatAppearance.BorderSize = 0;
             this.btn_Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Help.Location = new System.Drawing.Point(253, 516);
+            this.btn_Help.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_Help.Location = new System.Drawing.Point(254, 515);
             this.btn_Help.Name = "btn_Help";
             this.btn_Help.Size = new System.Drawing.Size(14, 10);
             this.btn_Help.TabIndex = 1;
@@ -1378,19 +1380,19 @@
             this.btn_Help.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_Help_MouseDown);
             this.btn_Help.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_Help_MouseUp);
             // 
-            // textBox1
+            // textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(548, 103);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 180);
-            this.textBox1.TabIndex = 2;
+            this.textBox.Location = new System.Drawing.Point(536, 12);
+            this.textBox.Multiline = true;
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(328, 383);
+            this.textBox.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(565, 372);
+            this.label1.Location = new System.Drawing.Point(630, 415);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 25);
             this.label1.TabIndex = 3;
@@ -1400,7 +1402,7 @@
             // 
             this.lbl_BombsDroped.AutoSize = true;
             this.lbl_BombsDroped.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_BombsDroped.Location = new System.Drawing.Point(627, 420);
+            this.lbl_BombsDroped.Location = new System.Drawing.Point(695, 460);
             this.lbl_BombsDroped.Name = "lbl_BombsDroped";
             this.lbl_BombsDroped.Size = new System.Drawing.Size(37, 39);
             this.lbl_BombsDroped.TabIndex = 4;
@@ -1410,10 +1412,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 526);
+            this.ClientSize = new System.Drawing.Size(876, 526);
             this.Controls.Add(this.lbl_BombsDroped);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox);
             this.Controls.Add(this.btn_Help);
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "MainForm";
@@ -1529,7 +1531,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_Help;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_BombsDroped;
     }

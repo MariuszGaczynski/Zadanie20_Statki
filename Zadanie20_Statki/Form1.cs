@@ -8,6 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Zadanie20_Statki
 {
@@ -32,23 +33,28 @@ namespace Zadanie20_Statki
             {
 
                 BuildingShips4Masted();
-                textBox1.Text += "4-masted Battleship located" + Environment.NewLine;
+                textBox.Text += "One 4-masted Battleship on water. Ready for combat !";
+                textBox.Text += Environment.NewLine;
                 BuildingShips3Masted();
                 BuildingShips3Masted();
-                textBox1.Text += "3-masted Battleships located" + Environment.NewLine; ;
+                textBox.Text += "Two 3-masted Battleships on water. Ready for combat !" ;
+                textBox.Text += Environment.NewLine;
                 BuildingShips2Masted();
                 BuildingShips2Masted();
                 BuildingShips2Masted();
-                textBox1.Text += "2-masted Battleships located" + Environment.NewLine; ;
+                textBox.Text += "Three 2-masted Battleships on water. Ready for combat !" ;
+                textBox.Text += Environment.NewLine;
                 BuildingShips1Masted();
                 BuildingShips1Masted();
                 BuildingShips1Masted();
                 BuildingShips1Masted();
-                textBox1.Text += "1-masted Battleships located" + Environment.NewLine; ;
+                textBox.Text += "Four 1-masted Battleships on water. Ready for combat !" ;
+                textBox.Text += Environment.NewLine;
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Restart application");
+                MessageBox.Show("Storm over battlefield!\nRestart application","FATAL ERROR");
+                Application.Exit();
             }
 
 
@@ -727,7 +733,7 @@ namespace Zadanie20_Statki
             lbl_BombsDroped.Text = bombsDroped.ToString();
 
             
-            btn.Enabled = false;
+            
 
             int btnIndex = Convert.ToInt32(btn.Tag) - 1;
 
@@ -735,13 +741,15 @@ namespace Zadanie20_Statki
             {
                 btn.BackColor = Color.LightBlue;
                 btn.Text = string.Empty;
+                btn.Enabled = false;
             }
             else
             {
                 btn.BackColor = Color.DarkOrange;
-                btn.ForeColor = Color.DarkOrange;
+                btn.ForeColor = Color.DarkOrange; //  DLACZEGO TO  NIE DZIAŁA ??????????????????
                 btn.Text = locationsList[btnIndex].ToString();
-                
+                btn.ForeColor = Color.DarkOrange;       //  DLACZEGO TO  NIE DZIAŁA ???????????
+                btn.Enabled = false;
                 CheckForSunken();
 
             }
@@ -774,6 +782,11 @@ namespace Zadanie20_Statki
                     tableLayoutPanel.Controls[index3].BackColor = Color.Red;
                     tableLayoutPanel.Controls[index4].BackColor = Color.Red;
 
+                    textBox.Text += "You have just sunk 4-masted Battleship. It was huge dreadnought type battleship. Well done!";
+                    textBox.Text += Environment.NewLine;
+                    ship.shipActive = false;
+                    CheckWholeFleet();
+
                 }
                 else if(tableLayoutPanel.Controls[index1].Text == "3"
                     && tableLayoutPanel.Controls[index1].BackColor == Color.DarkOrange
@@ -783,6 +796,12 @@ namespace Zadanie20_Statki
                     tableLayoutPanel.Controls[index1].BackColor = Color.Red;
                     tableLayoutPanel.Controls[index2].BackColor = Color.Red;
                     tableLayoutPanel.Controls[index3].BackColor = Color.Red;
+
+                    textBox.Text += "You have just sunk 3-masted Battleship. It was powerful and well armored cruiser. Well done!";
+                    textBox.Text += Environment.NewLine;
+                    ship.shipActive = false;
+                    CheckWholeFleet();
+
                 }
                 else if (tableLayoutPanel.Controls[index1].Text == "2"
                     && tableLayoutPanel.Controls[index1].BackColor == Color.DarkOrange
@@ -790,16 +809,36 @@ namespace Zadanie20_Statki
                 {
                     tableLayoutPanel.Controls[index1].BackColor = Color.Red;
                     tableLayoutPanel.Controls[index2].BackColor = Color.Red;
+
+                    textBox.Text += "You have just sunk 2-masted Battleship. It was quick and dangerous destroyer. Well done!";
+                    textBox.Text += Environment.NewLine;
+                    ship.shipActive = false;
+                    CheckWholeFleet();
+
                 }
                 else if (tableLayoutPanel.Controls[index1].Text == "1"
                     && tableLayoutPanel.Controls[index1].BackColor == Color.DarkOrange)
                 {
                     tableLayoutPanel.Controls[index1].BackColor = Color.Red;
+
+                    textBox.Text += "You have just sunk 1-masted Battleship. It wasn't easy to find this little torpedo boat. Well done!";
+                    textBox.Text += Environment.NewLine;
+                    ship.shipActive = false;
+                    CheckWholeFleet();
+
                 }
 
             }
 
+            
         }
+        //if (listOfShips.Count == 0)
+        //{
+        //    textBox.Text += "Good work Captain! You defeated all enemy  Battleships. You sunk whole fleet. It was epic!";
+        //    textBox.Text += Environment.NewLine;
+        //}
+
+
 
         //private bool SurroundingsIsEmpty(int btnIndex)
         //{
@@ -820,6 +859,32 @@ namespace Zadanie20_Statki
         //    }
 
         //}
+        private void CheckWholeFleet()
+        {
+            bool fleetDestroyed = false;
+            foreach (Ship ship in listOfShips)
+            {
+                if (ship.shipActive == false)
+                {
+                    fleetDestroyed = true;
+                }
+                else
+                {
+                    fleetDestroyed = false;
+                    break;
+                }
+
+                
+            }
+
+            if (fleetDestroyed == true)
+            {
+                textBox.Text += Environment.NewLine;
+                textBox.Text += "Good work Captain! You defeated all enemy  Battleships. You sunk whole fleet. It was epic!";
+                textBox.Text += Environment.NewLine;
+            }
+
+        }
 
         private bool CheckLocation(int btnIndex)
         {
@@ -881,6 +946,7 @@ namespace Zadanie20_Statki
         public sbyte[] mast2 = new sbyte[2];
         public sbyte[] mast3 = new sbyte[2];
         public sbyte[] mast4 = new sbyte[2];
+        public bool shipActive = true;
 
         public Ship(sbyte xMast1, sbyte yMast1)
         {
